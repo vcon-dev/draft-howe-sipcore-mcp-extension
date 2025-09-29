@@ -1,87 +1,84 @@
-```
-Internet-Draft                                                Thomas McCarthy-Howe
-Intended status: Informational                                VCONIC
-Expires: 31 March 2026                            28 September 2025
+---
+title: "SIP Extension for Model Context Protocol (MCP)"
+abbrev: "SIP MCP Extension"
+docname: draft-howe-sipcore-mcp-extension-latest
+category: info
 
-                 SIP Extension for Model Context Protocol (MCP)
-                      draft-howe-sipcore-mcp-extension-00
+ipr: trust200902
+area: ART
+workgroup: SIPCORE Working Group
+keyword: Internet-Draft
 
-Abstract
+stand_alone: yes
+smart_quotes: no
+pi: [toc, sortrefs, symrefs]
 
-   This document specifies a Session Initiation Protocol (SIP) [RFC3261]
-   extension to advertise support for, negotiate, and carry the Model
-   Context Protocol (MCP).  It defines: (1) a new SIP option-tag ("mcp"),
-   (2) new header fields for capability advertisement and selection,
-   (3) Contact feature-capability parameters for registration-time
-   discovery, and (4) the "application/mcp+json" media type. MCP payloads
-   can be exchanged during session establishment and mid-dialog using
-   INVITE/200 (Offer/Answer), MESSAGE, and INFO.
+author:
+ -
+    ins: T. McCarthy-Howe
+    name: Thomas McCarthy-Howe
+    organization: VCONIC
+    email: thomas@vconic.com
 
-Status of This Memo
+normative:
+  RFC2119:
+  RFC3261:
+  RFC3264:
+  RFC3428:
+  RFC3550:
+  RFC3711:
+  RFC3840:
+  RFC3841:
+  RFC4145:
+  RFC4566:
+  RFC4975:
+  RFC4976:
+  RFC5234:
+  RFC5764:
+  RFC6665:
+  RFC7118:
+  RFC7587:
+  RFC8174:
+  RFC8866:
 
-   This Internet-Draft is submitted in full conformance with the
-   provisions of BCP 78 and BCP 79.
-   Internet-Drafts are working documents of the IETF. Note that other
-   groups may also distribute working documents as Internet-Drafts.
-   The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.
+informative:
+  MCP-SPEC:
+    title: "Model Context Protocol Specification"
+    author:
+      org: Anthropic
+    date: 2024
+    target: https://modelcontextprotocol.io/introduction
+  MCP-ARCH:
+    title: "Model Context Protocol Architecture"
+    author:
+      org: Anthropic
+    date: 2024
+    target: https://modelcontextprotocol.io/docs/concepts/architecture
+  MCP-TRANS:
+    title: "Model Context Protocol Transports"
+    author:
+      org: Anthropic
+    date: 2024
+    target: https://modelcontextprotocol.io/docs/concepts/transports
 
-Copyright Notice
+--- abstract
 
-   Copyright (c) 2025 IETF Trust and the persons identified as the
-   document authors. All rights reserved.
-```
+This document specifies a Session Initiation Protocol (SIP) [RFC3261]
+extension to advertise support for, negotiate, and carry the Model
+Context Protocol (MCP).  It defines: (1) a new SIP option-tag ("mcp"),
+(2) new header fields for capability advertisement and selection,
+(3) Contact feature-capability parameters for registration-time
+discovery, and (4) the "application/mcp+json" media type. MCP payloads
+can be exchanged during session establishment and mid-dialog using
+INVITE/200 (Offer/Answer), MESSAGE, and INFO.
 
-## Table of Contents
+--- middle
 
-1. Introduction  
-   1.1. Problem Statement: MCP Transport Layer Failures  
-   1.2. SIP as a Solution  
-   1.3. Use Cases Addressed  
-   1.4. Architectural Justification  
-2. Model Context Protocol (MCP) — Purpose, Architecture, Capabilities  
-   2.1. Purpose (non-normative)  
-   2.2. Architecture (non-normative)  
-   2.3. Capabilities and Primitives (non-normative)  
-3. Conventions and Terminology  
-   3.1. Applicability Statement  
-4. Overview  
-   4.1. Agent-to-Agent Interoperation (Summary) (non-normative)  
-   4.2. Backward Compatibility  
-5. SIP Extensions  
-   5.1. Option-Tag: mcp  
-   5.2. Header: MCP-Capabilities  
-   5.3. Header: MCP-Select  
-   5.4. Contact Feature-Caps: +mcp, +mcp.ver, +mcp.cap  
-6. Payload Format: application/mcp+json  
-7. Protocol Operation  
-   7.1. Registration-Time Advertisement  
-   7.2. Session Establishment (Offer/Answer)  
-   7.3. Mid-Dialog Exchange (MESSAGE/INFO)  
-   7.4. Error Handling  
-   7.5. Graceful Degradation Scenarios  
-   7.6. Multimodal Operation (Audio + MSRP)  
-8. ABNF  
-9. Examples  
-10. Security Considerations  
-   10.1. Threat Model  
-   10.2. Security Requirements and Mitigations  
-   10.3. Feature Interaction Security Analysis  
-   10.4. Deployment-Specific Security Guidance  
-   10.5. Privacy Considerations  
-   10.6. Security Monitoring and Incident Response  
-   10.7. Implementation Security Guidelines  
-11. IANA Considerations  
-12. References  
-   12.1. Normative  
-   12.2. Informative  
-A. Acknowledgments  
-B. Change Log
-
-## 1. Introduction
+# Introduction
 
 The Model Context Protocol (MCP) is an application protocol for structured interaction with tools and agents. While MCP enables powerful AI agent capabilities, real-world production deployments have revealed significant transport-layer limitations that impact reliability, performance, and user experience.
 
-### 1.1. Problem Statement: MCP Transport Layer Failures
+## Problem Statement: MCP Transport Layer Failures
 
 Current MCP implementations encounter measurable failures in production environments, particularly affecting latency, reliability, and scalability:
 
@@ -93,7 +90,7 @@ Current MCP implementations encounter measurable failures in production environm
 
 **Developer Experience**: The official documentation for developing custom transports is lacking, the concepts section is complex, and the Python SDK lacks foundational interfaces, creating significant barriers to adoption and reliable implementation.
 
-### 1.1.1. Summary of MCP Transport Pain Points
+### Summary of MCP Transport Pain Points
 
 | Failure Mode/Metric           | Current MCP Impact                    | Real-World Evidence                     |
 |-------------------------------|---------------------------------------|-----------------------------------------|
@@ -104,15 +101,15 @@ Current MCP implementations encounter measurable failures in production environm
 | Lack of Documentation         | Custom transport implementation       | "Official documentation ... lacking" |
 | P99 Latency Spikes           | Tail latency in orchestration flows   | Cascading timeouts, user frustration |
 
-### 1.2. SIP as a Solution
+## SIP as a Solution
 
 SIP is widely deployed for rendezvous, session negotiation, and inter-domain federation. This document defines a minimal, backward-compatible SIP extension enabling MCP-aware endpoints to discover each other and exchange MCP messages using existing SIP methods, addressing the transport-layer limitations identified in current MCP deployments.
 
-### 1.3. Use Cases Addressed
+## Use Cases Addressed
 
 This SIP extension for MCP addresses both general AI agent communication needs and specific scenarios that are uniquely enabled by SIP's architectural capabilities.
 
-#### 1.3.1. General MCP Use Cases Enhanced by SIP
+### General MCP Use Cases Enhanced by SIP
 
 **Enterprise AI Agent Orchestration**: Organizations deploying multiple specialized AI agents (document processing, customer service, data analysis) require reliable, low-latency communication between agents. SIP's session management eliminates the 300–800ms latency penalties documented in current HTTP-based MCP deployments, while its proxy infrastructure enables intelligent routing based on agent capabilities.
 
@@ -370,9 +367,7 @@ Before justifying SIP as the preferred transport, it is important to analyze how
 
 This analysis shows that while HTTP/2-based RPC frameworks can resolve many MCP transport issues with less complexity, SIP offers unique capabilities for certain deployment scenarios that warrant the additional implementation effort.
 
----
-
-### 1.4.8. Backward Compatibility and Incremental Deployment
+### Backward Compatibility and Incremental Deployment
 
 This extension supports incremental deployment:
 - Existing SIP infrastructure does not require modification.
@@ -380,13 +375,13 @@ This extension supports incremental deployment:
 - MCP-capable endpoints can fall back to alternative transport methods if SIP peers do not support the extension.
 - The extension does not alter core SIP semantics or existing header fields.
 
-## 2. Model Context Protocol (MCP) — Purpose, Architecture, Capabilities
+# Model Context Protocol (MCP) — Purpose, Architecture, Capabilities
 
 This section orients SIP implementers to MCP. It is informative and
 summarizes the MCP model at a level sufficient to map MCP onto SIP
 signaling and mid-dialog exchanges.
 
-### 2.1. Purpose (non-normative)
+## Purpose (non-normative)
 
 MCP is an open protocol that standardizes how AI applications connect
 to external data and tools. It separates “context providers” from host
@@ -395,7 +390,7 @@ independent MCP servers while preserving clear security and consent
 boundaries. At its core, MCP uses JSON‑RPC 2.0 messages to exchange
 context, discover capabilities, and invoke operations in a uniform way.
 
-### 2.2. Architecture (non-normative)
+## Architecture (non-normative)
 
 MCP follows a host–client–server pattern:
 
@@ -423,7 +418,7 @@ Sessions are stateful: during initialization, client and server
 negotiate protocol version and capabilities and may bind a session
 identifier that is echoed on subsequent transport operations.
 
-### 2.3. Capabilities and Primitives (non-normative)
+## Capabilities and Primitives (non-normative)
 
 MCP defines structured “primitives” that either side can expose:
 
@@ -448,7 +443,7 @@ tracking, cancellation, and notifications. Together, these enable
 dynamic discovery, composition across multiple servers, and fine‑grained
 control over what data and actions are available to a given conversation.
 
-## 3. Conventions and Terminology
+# Conventions and Terminology
 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHOULD”,
 “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” are to be
@@ -457,11 +452,11 @@ interpreted as described in RFC 2119.
 ABNF is per RFC 5234. SIP terms are per RFC 3261. Feature-capability
 indicators follow RFC 6809.
 
-## 3.1. Applicability Statement
+## Applicability Statement
 
 This section defines the intended scope and limitations of this SIP extension for MCP transport, as required for Informational RFCs per RFC 5727.
 
-### 3.1.1. Intended Use Cases
+### Intended Use Cases
 
 This extension is designed for the following specific scenarios:
 
@@ -473,7 +468,7 @@ This extension is designed for the following specific scenarios:
 
 **Federated AI Networks**: Cross-organizational AI collaboration requiring SIP's mature inter-domain routing, security, and federation capabilities.
 
-### 3.1.2. Appropriate Deployment Environments
+### Appropriate Deployment Environments
 
 **Controlled Networks**: Enterprise environments with existing SIP infrastructure where administrators can manage MCP-capable endpoints and configure appropriate security policies.
 
@@ -481,7 +476,7 @@ This extension is designed for the following specific scenarios:
 
 **Real-time Applications**: Use cases requiring low-latency session establishment, capability negotiation, and the ability to correlate voice and data streams temporally.
 
-### 3.1.3. Limitations and Constraints
+### Limitations and Constraints
 
 **Not for General Internet Use**: This extension is not intended for general Internet deployment where endpoints cannot be trusted or where security policies cannot be enforced. The combination of AI capabilities with network protocols requires careful security consideration.
 
@@ -491,7 +486,7 @@ This extension is designed for the following specific scenarios:
 
 **Security Dependencies**: The security of MCP-over-SIP depends entirely on proper TLS deployment, certificate management, and SIP security best practices. Improper security configuration could expose sensitive AI capabilities and data.
 
-### 3.1.4. Alternative Approaches and Selection Criteria
+### Alternative Approaches and Selection Criteria
 
 This extension should be considered alongside other transport solutions that may address MCP's documented problems with lower implementation complexity:
 
@@ -524,7 +519,7 @@ This extension should be considered alongside other transport solutions that may
 
 **Native MCP Transports**: For applications that don't require the reliability, discovery, or federation improvements, native MCP transports (stdio, HTTP) may be sufficient despite their documented limitations.
 
-### 3.1.5. Migration Path Considerations
+### Migration Path Considerations
 
 This Informational specification allows implementations to gain operational experience before potential future standardization. Organizations deploying this extension should:
 
@@ -535,7 +530,7 @@ This Informational specification allows implementations to gain operational expe
 
 The extension is designed to be compatible with potential future Standards Track versions, but implementers should be prepared for possible changes based on operational experience and community feedback.
 
-## 4. Overview
+# Overview
 
 * **Discovery:** endpoints advertise MCP support and granular capabilities
   during REGISTER using Contact feature-caps and/or in responses.
@@ -548,7 +543,7 @@ The extension is designed to be compatible with potential future Standards Track
 * **Multimodal:** the same dialog MAY negotiate RTP audio streams alongside
   an MSRP session used to carry MCP; see Section 7.6.
 
-### 4.2. Backward Compatibility
+## Backward Compatibility
 
 This extension is designed for seamless backward compatibility with existing SIP infrastructure:
 
@@ -561,7 +556,7 @@ This extension is designed for seamless backward compatibility with existing SIP
 
 * **Incremental Deployment:** Organizations can deploy MCP-capable endpoints gradually without requiring network-wide upgrades. Mixed environments with both MCP-aware and legacy endpoints operate without disruption.
 
-## 4.1. Agent‑to‑Agent Interoperation (Summary) *(non‑normative)*
+## Agent‑to‑Agent Interoperation (Summary) *(non‑normative)*
 
 This extension enables heterogeneous “agents” (any SIP UA with MCP support,
 including voice bots, tool/knowledge agents, or co‑pilots) to interoperate
@@ -639,9 +634,9 @@ across two coordinated planes:
 5. **Completion:** Y sends a confirmation payload (ICS link, booking ID) over MCP;
    X renders a short audible summary and ends the call.
 
-## 5. SIP Extensions
+# SIP Extensions
 
-### 5.1. Option-Tag: mcp
+## Option-Tag: mcp
 
 **Note:** As an Informational RFC, this document does not register the "mcp" option tag (which requires Standards Action per RFC 5727). Implementations SHOULD use experimental option tags such as "x-mcp" or organization-specific variants until a Standards Track specification is available.
 
@@ -652,7 +647,7 @@ The option-tag indicates support for this specification:
   the tag will respond with 420 (Bad Extension).
 * A UAC or UAS MAY include the option tag in Supported to advertise support.
 
-### 5.2. Header: MCP-Capabilities
+## Header: MCP-Capabilities
 
 The MCP-Capabilities header field conveys a concise, serializable
 summary of available MCP tools/functions and versions.
@@ -670,7 +665,7 @@ Semantics:
 
 **Backward Compatibility:** Per RFC 3261 Section 7.4.1, SIP implementations that do not recognize this header field MUST ignore it. This ensures that existing SIP infrastructure continues to function normally when processing messages containing MCP-Capabilities headers.
 
-### 5.3. Header: MCP-Select
+## Header: MCP-Select
 
 The MCP-Select header communicates a caller's desired subset or mode
 of MCP operation (e.g., chosen tool bundle, schemas, or role).
@@ -686,7 +681,7 @@ Semantics:
 
 **Backward Compatibility:** Like MCP-Capabilities, this header field is ignored by SIP implementations that do not recognize it, ensuring no impact on existing SIP processing.
 
-### 5.4. Contact Feature-Caps: +mcp, +mcp.ver, +mcp.cap
+## Contact Feature-Caps: +mcp, +mcp.ver, +mcp.cap
 
 This document defines feature-capability indicators per RFC 6809:
 
@@ -704,7 +699,7 @@ Contact: <sip:alice@ua.example>;expires=3600; +mcp; +mcp.ver="1.0";
 
 **Backward Compatibility:** Feature-capability indicators follow RFC 6809 semantics. SIP registrars and proxies that do not understand these parameters treat them as opaque Contact header parameters and preserve them during registration processing. This allows MCP-aware endpoints to discover each other even in mixed environments with legacy infrastructure.
 
-## 6. Payload Format: application/mcp+json
+# Payload Format: application/mcp+json
 
 **Media type:** `application/mcp+json`  
 **Encoding:** UTF-8
@@ -734,16 +729,16 @@ INVITE/200. Example:
 Endpoints MUST accept (a). Support for (b) is OPTIONAL and only valid
 during session establishment to prime subsequent MCP exchanges.
 
-## 7. Protocol Operation
+# Protocol Operation
 
-### 7.1. Registration-Time Advertisement
+## Registration-Time Advertisement
 
 UAs supporting MCP SHOULD advertise via Contact feature-caps (+mcp,
 +mcp.ver, +mcp.cap). Registrars MAY index these for capability-based
 routing. Proxies MUST treat these parameters as opaque hints and MUST
 NOT modify them.
 
-#### 7.1.1. Registration Performance Characteristics
+### Registration Performance Characteristics
 
 MCP-capable agents SHOULD optimize registration refresh intervals based on their operational characteristics:
 
@@ -773,7 +768,7 @@ This registration-based discovery provides significant performance advantages ov
 * Capability updates: Immediate upon registration vs. DNS TTL-dependent
 * Cross-domain discovery: Leverages existing SIP peering vs. global DNS propagation delays
 
-### 7.2. Session Establishment (Offer/Answer)
+## Session Establishment (Offer/Answer)
 
 A UAC desiring MCP:
 * Includes Supported: mcp (and optionally Require: mcp).
@@ -788,7 +783,7 @@ A UAS accepting MCP:
 If MCP is rejected but the call proceeds, the UAS omits Supported: mcp
 and returns 415/488 if a body was required.
 
-### 7.3. Mid-Dialog Exchange (MESSAGE/INFO)
+## Mid-Dialog Exchange (MESSAGE/INFO)
 
 * Short transactional MCP messages MAY be sent using SIP MESSAGE
   (out-of-dialog or in-dialog). Reliable mid-dialog signaling MAY use
@@ -797,7 +792,7 @@ and returns 415/488 if a body was required.
   (RFC 4975/4976) or SIP WebSocket (RFC 7118) and then tunnel MCP at
   that layer; negotiation is out of scope.
 
-### 7.4. Error Handling
+## Error Handling
 
 * 420 (Bad Extension) if Require: mcp is present and unsupported.
 * 415 (Unsupported Media Type) if `Content-Type: application/mcp+json`
@@ -806,7 +801,7 @@ and returns 415/488 if a body was required.
   MCP's native error members; SIP error codes SHOULD map where
   practical (e.g., 403 for policy, 488 for not acceptable here).
 
-### 7.5. Graceful Degradation Scenarios
+## Graceful Degradation Scenarios
 
 This section describes specific behaviors when MCP support is asymmetric or unavailable:
 
@@ -841,12 +836,12 @@ This section describes specific behaviors when MCP support is asymmetric or unav
 * Endpoints MAY fall back to alternative MCP transport methods
 * Voice or other media streams continue uninterrupted
 
-### 7.5. Multimodal Operation (Audio + MSRP)
+## Multimodal Operation (Audio + MSRP)
 
 This section specifies how an MCP-enabled dialog can carry interactive
 audio alongside an MSRP-based control/data channel for MCP.
 
-#### 7.5.0. MCP-MSRP Natural Compatibility Analysis
+### MCP-MSRP Natural Compatibility Analysis
 
 The combination of MCP and MSRP represents a natural architectural convergence that addresses fundamental limitations in both protocols when used independently:
 
@@ -950,7 +945,7 @@ Content-Type: application/mcp+json
 
 --mcp-boundary
 Content-Type: image/jpeg
-Content-ID: <image001>
+Content-ID: &lt;image001&gt;
 
 [Binary JPEG data follows...]
 --mcp-boundary--
@@ -1084,7 +1079,7 @@ or switching capture modes:
 * **QoS/DSCP** markings are deployment-specific and out of scope; audio
   and MSRP may use different markings depending on policy.
 
-## 8. ABNF
+# ABNF
 
 Using the ABNF of RFC 5234 and header field grammar of RFC 3261:
 
@@ -1111,9 +1106,9 @@ mcp-policy-param  =  "policy" EQUAL DQUOTE token DQUOTE
 ; +mcp, +mcp.ver, +mcp.cap
 ```
 
-## 9. Examples
+# Examples
 
-### 9.1. REGISTER with Contact Feature-Caps
+## REGISTER with Contact Feature-Caps
 
 ```
 REGISTER sip:example.com SIP/2.0
@@ -1128,7 +1123,7 @@ Supported: path, outbound, gruu, mcp
 Content-Length: 0
 ```
 
-### 9.2. INVITE with MCP Offer
+## INVITE with MCP Offer
 
 ```
 INVITE sip:bot@example.com SIP/2.0
@@ -1176,7 +1171,7 @@ Content-Length: 172
 }
 ```
 
-### 9.3. Mid-Dialog MCP MESSAGE (native JSON‑RPC)
+## Mid-Dialog MCP MESSAGE (native JSON‑RPC)
 
 ```
 MESSAGE sip:bot@example.com;gr=xyz SIP/2.0
@@ -1196,7 +1191,7 @@ Content-Length: 144
 }
 ```
 
-### 9.4. SDP Offer: Audio (SRTP) + MSRP (msrps) for MCP
+## SDP Offer: Audio (SRTP) + MSRP (msrps) for MCP
 
 ```
 v=0
@@ -1218,7 +1213,7 @@ a=accept-types: application/mcp+json
 a=sendrecv
 ```
 
-### 9.5. MSRP SEND carrying application/mcp+json
+## MSRP SEND carrying application/mcp+json
 
 ```
 MSRP a786hjs2 SEND
@@ -1239,7 +1234,7 @@ Content-Type: application/mcp+json
 -------a786hjs2$
 ```
 
-### 9.6. Multimedia Tool Call with Binary Content (MCP over MSRP)
+## Multimedia Tool Call with Binary Content (MCP over MSRP)
 
 This example demonstrates a sophisticated multimedia tool call where an AI agent requests image analysis with the actual image data included in the MSRP message:
 
@@ -1273,7 +1268,7 @@ Content-Type: application/mcp+json
 
 --mcp-multimedia-boundary
 Content-Type: image/jpeg
-Content-ID: <photo001>
+Content-ID: &lt;photo001&gt;
 Content-Length: 65432
 
 [Binary JPEG data - 65,432 bytes]
@@ -1281,7 +1276,7 @@ Content-Length: 65432
 -------img001$
 ```
 
-### 9.7. Streaming Tool Response (Large Document Generation)
+## Streaming Tool Response (Large Document Generation)
 
 This example shows how large tool responses can be streamed using MSRP chunking, enabling real-time processing of generated content:
 
@@ -1331,7 +1326,7 @@ Content-Type: application/mcp+json
 -------doc002$
 ```
 
-### 9.8. Concurrent Tool Execution with Progress Reporting
+## Concurrent Tool Execution with Progress Reporting
 
 This example demonstrates multiple concurrent tool calls with progress reporting, showcasing MSRP's ability to handle parallel operations:
 
@@ -1393,7 +1388,7 @@ Content-Type: application/mcp+json
 -------progress001$
 ```
 
-### 9.9. Voice + Vision Integration with Temporal Correlation
+## Voice + Vision Integration with Temporal Correlation
 
 This example shows the integration of audio streams with visual processing, demonstrating temporal correlation between RTP audio and MCP tool calls:
 
@@ -1432,13 +1427,13 @@ Content-Type: application/mcp+json
 -------voice-vision001$
 ```
 
-## 10. Security Considerations
+# Security Considerations
 
 This section provides comprehensive security analysis as required for IETF specifications. The combination of AI capabilities (MCP) with network signaling (SIP) creates unique security considerations that require careful analysis and mitigation.
 
-### 10.1. Threat Model
+## Threat Model
 
-#### 10.1.1. Assets and Trust Boundaries
+### Assets and Trust Boundaries
 
 **Protected Assets:**
 - AI agent capabilities and tool inventories
@@ -1743,7 +1738,7 @@ This section provides comprehensive security analysis as required for IETF speci
 
 This comprehensive security analysis addresses the unique risks introduced by combining AI capabilities with SIP signaling, providing specific guidance for secure deployment and operation of MCP-over-SIP systems.
 
-## 11. IANA Considerations
+# IANA Considerations
 
 This document requests IANA registration of SIP protocol elements as described below. As an Informational RFC, these registrations follow the Designated Expert review process per RFC 5727.
 
@@ -1816,7 +1811,7 @@ Per RFC 5727, the Designated Expert reviewing registrations from this document s
 3. The applicability statement clearly defines appropriate usage scenarios
 4. The registrations follow established SIP extension patterns and do not undermine SIP's architectural integrity
 
-## 12. References
+# References
 
 ### 12.1. Normative
 
