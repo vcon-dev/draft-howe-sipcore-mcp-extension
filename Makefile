@@ -1,4 +1,4 @@
-LIBDIR := i-d-template
+LIBDIR := lib
 include $(LIBDIR)/main.mk
 
 $(LIBDIR)/main.mk:

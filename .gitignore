@@ -1,1 +1,8 @@
 .claude
+.DS_Store
+.refcache/
+lib/
+*.html
+*.txt
+*.pdf
+draft-howe-sipcore-mcp-extension-kramdown.*
