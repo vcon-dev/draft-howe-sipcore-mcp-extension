@@ -3,10 +3,10 @@
   "repo": "draft-howe-sipcore-mcp-extension",
   "repo_version": null,
   "archetype": "ietf-draft",
-  "generated_at": "2026-04-16T15:15:44.268373+00:00",
+  "generated_at": "2026-04-17T12:29:50.579322+00:00",
   "stats": {
-    "node_count": 156,
-    "edge_count": 111
+    "node_count": 121,
+    "edge_count": 82
   },
   "nodes": [
     {
@@ -20,7 +20,7 @@
       "type": "section",
       "name": "Introduction",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 77,
+      "line": 57,
       "level": 1
     },
     {
@@ -28,7 +28,7 @@
       "type": "section",
       "name": "Problem Statement: MCP Transport Layer Failures",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 81,
+      "line": 65,
       "level": 2
     },
     {
@@ -36,7 +36,7 @@
       "type": "section",
       "name": "Summary of MCP Transport Pain Points",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 93,
+      "line": 95,
       "level": 3
     },
     {
@@ -44,7 +44,7 @@
       "type": "section",
       "name": "SIP as a Solution",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 104,
+      "line": 106,
       "level": 2
     },
     {
@@ -52,7 +52,7 @@
       "type": "section",
       "name": "Use Cases Addressed",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 108,
+      "line": 115,
       "level": 2
     },
     {
@@ -60,143 +60,143 @@
       "type": "section",
       "name": "General MCP Use Cases Enhanced by SIP",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 112,
+      "line": 121,
       "level": 3
     },
     {
-      "id": "section:1-3-2-sip-unique-use-cases",
+      "id": "section:sip-unique-use-cases",
       "type": "section",
-      "name": "1.3.2. SIP-Unique Use Cases",
+      "name": "SIP-Unique Use Cases",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 122,
-      "level": 4
+      "line": 149,
+      "level": 3
     },
     {
-      "id": "section:1-3-3-performance-critical-use-cases",
+      "id": "section:performance-critical-use-cases",
       "type": "section",
-      "name": "1.3.3. Performance-Critical Use Cases",
+      "name": "Performance-Critical Use Cases",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 144,
-      "level": 4
+      "line": 175,
+      "level": 3
     },
     {
-      "id": "section:1-3-4-regulatory-and-compliance-use-cases",
+      "id": "section:regulatory-and-compliance-use-cases",
       "type": "section",
-      "name": "1.3.4. Regulatory and Compliance Use Cases",
+      "name": "Regulatory and Compliance Use Cases",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 156,
-      "level": 4
+      "line": 189,
+      "level": 3
     },
     {
-      "id": "section:1-3-5-migration-and-integration-use-cases",
+      "id": "section:migration-and-integration-use-cases",
       "type": "section",
-      "name": "1.3.5. Migration and Integration Use Cases",
+      "name": "Migration and Integration Use Cases",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 168,
-      "level": 4
+      "line": 203,
+      "level": 3
     },
     {
-      "id": "section:1-4-architectural-justification",
+      "id": "section:architectural-justification",
       "type": "section",
-      "name": "1.4. Architectural Justification",
+      "name": "Architectural Justification",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 182,
+      "line": 219,
       "level": 2
     },
     {
-      "id": "section:1-4-1-why-sip-for-mcp-transport",
+      "id": "section:why-sip-for-mcp-transport",
       "type": "section",
-      "name": "1.4.1. Why SIP for MCP Transport?",
+      "name": "Why SIP for MCP Transport?",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 184,
+      "line": 221,
       "level": 3
     },
     {
-      "id": "section:1-4-2-limitations-of-http-websocket-only-approaches",
+      "id": "section:limitations-of-http-websocket-only-approaches",
       "type": "section",
-      "name": "1.4.2. Limitations of HTTP/WebSocket-Only Approaches",
+      "name": "Limitations of HTTP/WebSocket-Only Approaches",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 194,
+      "line": 231,
       "level": 3
     },
     {
-      "id": "section:1-4-3-sip-s-value-added-capabilities",
+      "id": "section:sip-s-value-added-capabilities",
       "type": "section",
-      "name": "1.4.3. SIP's Value-Added Capabilities",
+      "name": "SIP's Value-Added Capabilities",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 219,
+      "line": 259,
       "level": 3
     },
     {
-      "id": "section:1-4-4-discovery-performance-analysis-sip-vs-dns",
+      "id": "section:discovery-performance-analysis-sip-vs-dns",
       "type": "section",
-      "name": "1.4.4. Discovery Performance Analysis: SIP vs. DNS",
+      "name": "Discovery Performance Analysis: SIP vs. DNS",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 229,
+      "line": 269,
       "level": 3
     },
     {
-      "id": "section:1-4-5-quantitative-performance-analysis-sip-vs-current-mcp-transports",
+      "id": "section:quantitative-performance-analysis-sip-vs-current-mcp-transports",
       "type": "section",
-      "name": "1.4.5. Quantitative Performance Analysis: SIP vs. Current MCP Transports",
+      "name": "Quantitative Performance Analysis: SIP vs. Current MCP Transports",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 256,
+      "line": 299,
       "level": 3
     },
     {
-      "id": "section:1-4-6-specific-use-cases-addressing-real-world-mcp-problems",
+      "id": "section:specific-use-cases-addressing-real-world-mcp-problems",
       "type": "section",
-      "name": "1.4.6. Specific Use Cases Addressing Real-World MCP Problems",
+      "name": "Specific Use Cases Addressing Real-World MCP Problems",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 280,
+      "line": 327,
       "level": 3
     },
     {
-      "id": "section:1-4-7-alternative-transport-solutions-analysis",
+      "id": "section:alternative-transport-solutions-analysis",
       "type": "section",
-      "name": "1.4.7. Alternative Transport Solutions Analysis",
+      "name": "Alternative Transport Solutions Analysis",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 294,
+      "line": 341,
       "level": 3
     },
     {
-      "id": "section:1-4-7-1-http-2-based-rpc-framework-analysis",
+      "id": "section:http-2-based-rpc-framework-analysis",
       "type": "section",
-      "name": "1.4.7.1. HTTP/2-Based RPC Framework Analysis",
+      "name": "HTTP/2-Based RPC Framework Analysis",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 298,
+      "line": 345,
       "level": 4
     },
     {
-      "id": "section:1-4-7-2-quic-analysis",
+      "id": "section:quic-analysis",
       "type": "section",
-      "name": "1.4.7.2. QUIC Analysis",
+      "name": "QUIC Analysis",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 313,
+      "line": 362,
       "level": 4
     },
     {
-      "id": "section:1-4-7-3-amqp-analysis",
+      "id": "section:amqp-analysis",
       "type": "section",
-      "name": "1.4.7.3. AMQP Analysis",
+      "name": "AMQP Analysis",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 326,
+      "line": 377,
       "level": 4
     },
     {
-      "id": "section:1-4-7-4-comparative-analysis-summary",
+      "id": "section:comparative-analysis-summary",
       "type": "section",
-      "name": "1.4.7.4. Comparative Analysis Summary",
+      "name": "Comparative Analysis Summary",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 340,
+      "line": 393,
       "level": 4
     },
     {
-      "id": "section:1-4-7-5-when-to-choose-sip-over-simpler-alternatives",
+      "id": "section:when-to-choose-sip-over-simpler-alternatives",
       "type": "section",
-      "name": "1.4.7.5. When to Choose SIP Over Simpler Alternatives",
+      "name": "When to Choose SIP Over Simpler Alternatives",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 353,
+      "line": 406,
       "level": 4
     },
     {
@@ -204,15 +204,15 @@
       "type": "section",
       "name": "Backward Compatibility and Incremental Deployment",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 370,
+      "line": 425,
       "level": 3
     },
     {
       "id": "section:model-context-protocol-mcp-purpose-architecture-capabilities",
       "type": "section",
-      "name": "Model Context Protocol (MCP) \u2014 Purpose, Architecture, Capabilities",
+      "name": "Model Context Protocol (MCP) - Purpose, Architecture, Capabilities",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 378,
+      "line": 433,
       "level": 1
     },
     {
@@ -220,7 +220,7 @@
       "type": "section",
       "name": "Purpose (non-normative)",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 384,
+      "line": 439,
       "level": 2
     },
     {
@@ -228,7 +228,7 @@
       "type": "section",
       "name": "Architecture (non-normative)",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 393,
+      "line": 448,
       "level": 2
     },
     {
@@ -236,7 +236,7 @@
       "type": "section",
       "name": "Capabilities and Primitives (non-normative)",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 421,
+      "line": 476,
       "level": 2
     },
     {
@@ -244,7 +244,7 @@
       "type": "section",
       "name": "Conventions and Terminology",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 446,
+      "line": 501,
       "level": 1
     },
     {
@@ -252,7 +252,7 @@
       "type": "section",
       "name": "Applicability Statement",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 455,
+      "line": 512,
       "level": 2
     },
     {
@@ -260,7 +260,7 @@
       "type": "section",
       "name": "Intended Use Cases",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 459,
+      "line": 516,
       "level": 3
     },
     {
@@ -268,7 +268,7 @@
       "type": "section",
       "name": "Appropriate Deployment Environments",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 471,
+      "line": 528,
       "level": 3
     },
     {
@@ -276,7 +276,7 @@
       "type": "section",
       "name": "Limitations and Constraints",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 479,
+      "line": 536,
       "level": 3
     },
     {
@@ -284,7 +284,7 @@
       "type": "section",
       "name": "Alternative Approaches and Selection Criteria",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 489,
+      "line": 546,
       "level": 3
     },
     {
@@ -292,7 +292,7 @@
       "type": "section",
       "name": "Migration Path Considerations",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 522,
+      "line": 579,
       "level": 3
     },
     {
@@ -300,7 +300,7 @@
       "type": "section",
       "name": "Overview",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 533,
+      "line": 590,
       "level": 1
     },
     {
@@ -308,15 +308,15 @@
       "type": "section",
       "name": "Backward Compatibility",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 546,
+      "line": 603,
       "level": 2
     },
     {
       "id": "section:agent-to-agent-interoperation-summary-non-normative",
       "type": "section",
-      "name": "Agent\u2011to\u2011Agent Interoperation (Summary) *(non\u2011normative)*",
+      "name": "Agent-to-Agent Interoperation (Summary) *(non-normative)*",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 559,
+      "line": 616,
       "level": 2
     },
     {
@@ -324,7 +324,7 @@
       "type": "section",
       "name": "Concrete Use Cases",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 603,
+      "line": 660,
       "level": 3
     },
     {
@@ -332,7 +332,7 @@
       "type": "section",
       "name": "SIP Extensions",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 637,
+      "line": 694,
       "level": 1
     },
     {
@@ -340,7 +340,7 @@
       "type": "section",
       "name": "Option-Tag: mcp",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 639,
+      "line": 696,
       "level": 2
     },
     {
@@ -348,7 +348,7 @@
       "type": "section",
       "name": "Header: MCP-Capabilities",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 650,
+      "line": 707,
       "level": 2
     },
     {
@@ -356,7 +356,7 @@
       "type": "section",
       "name": "Header: MCP-Select",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 668,
+      "line": 723,
       "level": 2
     },
     {
@@ -364,7 +364,7 @@
       "type": "section",
       "name": "Contact Feature-Caps: +mcp, +mcp.ver, +mcp.cap",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 684,
+      "line": 737,
       "level": 2
     },
     {
@@ -372,247 +372,15 @@
       "type": "section",
       "name": "Payload Format: application/mcp+json",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 702,
+      "line": 751,
       "level": 1
-    },
-    {
-      "id": "section:protocol-operation",
-      "type": "section",
-      "name": "Protocol Operation",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 732,
-      "level": 1
-    },
-    {
-      "id": "section:registration-time-advertisement",
-      "type": "section",
-      "name": "Registration-Time Advertisement",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 734,
-      "level": 2
-    },
-    {
-      "id": "section:registration-performance-characteristics",
-      "type": "section",
-      "name": "Registration Performance Characteristics",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 741,
-      "level": 3
-    },
-    {
-      "id": "section:session-establishment-offer-answer",
-      "type": "section",
-      "name": "Session Establishment (Offer/Answer)",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 771,
-      "level": 2
-    },
-    {
-      "id": "section:mid-dialog-exchange-message-info",
-      "type": "section",
-      "name": "Mid-Dialog Exchange (MESSAGE/INFO)",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 786,
-      "level": 2
-    },
-    {
-      "id": "section:error-handling",
-      "type": "section",
-      "name": "Error Handling",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 795,
-      "level": 2
-    },
-    {
-      "id": "section:graceful-degradation-scenarios",
-      "type": "section",
-      "name": "Graceful Degradation Scenarios",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 804,
-      "level": 2
-    },
-    {
-      "id": "section:multimodal-operation-audio-msrp",
-      "type": "section",
-      "name": "Multimodal Operation (Audio + MSRP)",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 839,
-      "level": 2
-    },
-    {
-      "id": "section:mcp-msrp-natural-compatibility-analysis",
-      "type": "section",
-      "name": "MCP-MSRP Natural Compatibility Analysis",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 844,
-      "level": 3
-    },
-    {
-      "id": "section:7-5-1-goals-and-scope",
-      "type": "section",
-      "name": "7.5.1. Goals and Scope",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 866,
-      "level": 4
-    },
-    {
-      "id": "section:7-5-2-media-negotiation-with-sdp",
-      "type": "section",
-      "name": "7.5.2. Media Negotiation with SDP",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 877,
-      "level": 4
-    },
-    {
-      "id": "section:7-5-3-binding-mcp-to-msrp",
-      "type": "section",
-      "name": "7.5.3. Binding MCP to MSRP",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 906,
-      "level": 4
-    },
-    {
-      "id": "section:7-5-3a-multimedia-tool-calling-patterns",
-      "type": "section",
-      "name": "7.5.3a. Multimedia Tool Calling Patterns",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 917,
-      "level": 4
-    },
-    {
-      "id": "section:7-5-3b-performance-and-scalability-advantages",
-      "type": "section",
-      "name": "7.5.3b. Performance and Scalability Advantages",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1001,
-      "level": 4
-    },
-    {
-      "id": "section:7-5-4-timing-and-synchronization",
-      "type": "section",
-      "name": "7.5.4. Timing and Synchronization",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1029,
-      "level": 4
-    },
-    {
-      "id": "section:7-5-5-barge-in-and-turn-management",
-      "type": "section",
-      "name": "7.5.5. Barge-In and Turn Management",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1051,
-      "level": 4
-    },
-    {
-      "id": "section:7-5-6-fallbacks-and-failure-handling",
-      "type": "section",
-      "name": "7.5.6. Fallbacks and Failure Handling",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1063,
-      "level": 4
-    },
-    {
-      "id": "section:7-5-7-security-and-qos-notes",
-      "type": "section",
-      "name": "7.5.7. Security and QoS Notes",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1072,
-      "level": 4
-    },
-    {
-      "id": "section:abnf",
-      "type": "section",
-      "name": "ABNF",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1082,
-      "level": 1
-    },
-    {
-      "id": "section:examples",
-      "type": "section",
-      "name": "Examples",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1109,
-      "level": 1
-    },
-    {
-      "id": "section:register-with-contact-feature-caps",
-      "type": "section",
-      "name": "REGISTER with Contact Feature-Caps",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1111,
-      "level": 2
-    },
-    {
-      "id": "section:invite-with-mcp-offer",
-      "type": "section",
-      "name": "INVITE with MCP Offer",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1126,
-      "level": 2
-    },
-    {
-      "id": "section:mid-dialog-mcp-message-native-json-rpc",
-      "type": "section",
-      "name": "Mid-Dialog MCP MESSAGE (native JSON\u2011RPC)",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1174,
-      "level": 2
-    },
-    {
-      "id": "section:sdp-offer-audio-srtp-msrp-msrps-for-mcp",
-      "type": "section",
-      "name": "SDP Offer: Audio (SRTP) + MSRP (msrps) for MCP",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1194,
-      "level": 2
-    },
-    {
-      "id": "section:msrp-send-carrying-application-mcp-json",
-      "type": "section",
-      "name": "MSRP SEND carrying application/mcp+json",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1216,
-      "level": 2
-    },
-    {
-      "id": "section:multimedia-tool-call-with-binary-content-mcp-over-msrp",
-      "type": "section",
-      "name": "Multimedia Tool Call with Binary Content (MCP over MSRP)",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1237,
-      "level": 2
-    },
-    {
-      "id": "section:streaming-tool-response-large-document-generation",
-      "type": "section",
-      "name": "Streaming Tool Response (Large Document Generation)",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1279,
-      "level": 2
-    },
-    {
-      "id": "section:concurrent-tool-execution-with-progress-reporting",
-      "type": "section",
-      "name": "Concurrent Tool Execution with Progress Reporting",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1329,
-      "level": 2
-    },
-    {
-      "id": "section:voice-vision-integration-with-temporal-correlation",
-      "type": "section",
-      "name": "Voice + Vision Integration with Temporal Correlation",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1391,
-      "level": 2
     },
     {
       "id": "section:security-considerations",
       "type": "section",
       "name": "Security Considerations",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1430,
+      "line": 1460,
       "level": 1
     },
     {
@@ -620,7 +388,7 @@
       "type": "section",
       "name": "Threat Model",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1434,
+      "line": 1464,
       "level": 2
     },
     {
@@ -628,271 +396,271 @@
       "type": "section",
       "name": "Assets and Trust Boundaries",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1436,
+      "line": 1466,
       "level": 3
     },
     {
-      "id": "section:10-1-2-threat-actors",
+      "id": "section:threat-actors",
       "type": "section",
-      "name": "10.1.2. Threat Actors",
+      "name": "Threat Actors",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1452,
-      "level": 4
-    },
-    {
-      "id": "section:10-1-3-attack-vectors",
-      "type": "section",
-      "name": "10.1.3. Attack Vectors",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1472,
-      "level": 4
-    },
-    {
-      "id": "section:10-2-security-requirements-and-mitigations",
-      "type": "section",
-      "name": "10.2. Security Requirements and Mitigations",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1498,
+      "line": 1484,
       "level": 3
     },
     {
-      "id": "section:10-2-1-transport-security",
+      "id": "section:attack-vectors",
       "type": "section",
-      "name": "10.2.1. Transport Security",
+      "name": "Attack Vectors",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1500,
-      "level": 4
-    },
-    {
-      "id": "section:10-2-2-authentication-and-authorization",
-      "type": "section",
-      "name": "10.2.2. Authentication and Authorization",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1515,
-      "level": 4
-    },
-    {
-      "id": "section:10-2-3-content-protection",
-      "type": "section",
-      "name": "10.2.3. Content Protection",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1535,
-      "level": 4
-    },
-    {
-      "id": "section:10-3-feature-interaction-security-analysis",
-      "type": "section",
-      "name": "10.3. Feature Interaction Security Analysis",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1555,
+      "line": 1507,
       "level": 3
     },
     {
-      "id": "section:10-3-1-sip-mcp-boundary-security",
+      "id": "section:security-requirements-and-mitigations",
       "type": "section",
-      "name": "10.3.1. SIP-MCP Boundary Security",
+      "name": "Security Requirements and Mitigations",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1557,
-      "level": 4
+      "line": 1537,
+      "level": 2
     },
     {
-      "id": "section:10-3-2-multi-modal-security-interactions",
+      "id": "section:transport-security",
       "type": "section",
-      "name": "10.3.2. Multi-Modal Security Interactions",
+      "name": "Transport Security",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1571,
-      "level": 4
-    },
-    {
-      "id": "section:10-3-3-federation-security-interactions",
-      "type": "section",
-      "name": "10.3.3. Federation Security Interactions",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1585,
-      "level": 4
-    },
-    {
-      "id": "section:10-4-deployment-specific-security-guidance",
-      "type": "section",
-      "name": "10.4. Deployment-Specific Security Guidance",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1599,
+      "line": 1539,
       "level": 3
     },
     {
-      "id": "section:10-4-1-enterprise-deployment",
+      "id": "section:authentication-and-authorization",
       "type": "section",
-      "name": "10.4.1. Enterprise Deployment",
+      "name": "Authentication and Authorization",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1601,
-      "level": 4
-    },
-    {
-      "id": "section:10-4-2-federated-deployment",
-      "type": "section",
-      "name": "10.4.2. Federated Deployment",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1621,
-      "level": 4
-    },
-    {
-      "id": "section:10-4-3-cloud-and-service-provider-deployment",
-      "type": "section",
-      "name": "10.4.3. Cloud and Service Provider Deployment",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1635,
-      "level": 4
-    },
-    {
-      "id": "section:10-5-privacy-considerations",
-      "type": "section",
-      "name": "10.5. Privacy Considerations",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1649,
+      "line": 1556,
       "level": 3
     },
     {
-      "id": "section:10-5-1-data-minimization",
+      "id": "section:content-protection",
       "type": "section",
-      "name": "10.5.1. Data Minimization",
+      "name": "Content Protection",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1651,
-      "level": 4
-    },
-    {
-      "id": "section:10-5-2-regulatory-compliance",
-      "type": "section",
-      "name": "10.5.2. Regulatory Compliance",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1665,
-      "level": 4
-    },
-    {
-      "id": "section:10-6-security-monitoring-and-incident-response",
-      "type": "section",
-      "name": "10.6. Security Monitoring and Incident Response",
-      "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1679,
+      "line": 1579,
       "level": 3
     },
     {
-      "id": "section:10-6-1-monitoring-requirements",
+      "id": "section:feature-interaction-security-analysis",
       "type": "section",
-      "name": "10.6.1. Monitoring Requirements",
+      "name": "Feature Interaction Security Analysis",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1681,
-      "level": 4
+      "line": 1602,
+      "level": 2
     },
     {
-      "id": "section:10-6-2-incident-response",
+      "id": "section:sip-mcp-boundary-security",
       "type": "section",
-      "name": "10.6.2. Incident Response",
+      "name": "SIP-MCP Boundary Security",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1695,
-      "level": 4
+      "line": 1604,
+      "level": 3
     },
     {
-      "id": "section:10-7-implementation-security-guidelines",
+      "id": "section:multi-modal-security-interactions",
       "type": "section",
-      "name": "10.7. Implementation Security Guidelines",
+      "name": "Multi-Modal Security Interactions",
+      "file": "draft-howe-sipcore-mcp-extension.md",
+      "line": 1620,
+      "level": 3
+    },
+    {
+      "id": "section:federation-security-interactions",
+      "type": "section",
+      "name": "Federation Security Interactions",
+      "file": "draft-howe-sipcore-mcp-extension.md",
+      "line": 1636,
+      "level": 3
+    },
+    {
+      "id": "section:deployment-specific-security-guidance",
+      "type": "section",
+      "name": "Deployment-Specific Security Guidance",
+      "file": "draft-howe-sipcore-mcp-extension.md",
+      "line": 1652,
+      "level": 2
+    },
+    {
+      "id": "section:enterprise-deployment",
+      "type": "section",
+      "name": "Enterprise Deployment",
+      "file": "draft-howe-sipcore-mcp-extension.md",
+      "line": 1654,
+      "level": 3
+    },
+    {
+      "id": "section:federated-deployment",
+      "type": "section",
+      "name": "Federated Deployment",
+      "file": "draft-howe-sipcore-mcp-extension.md",
+      "line": 1677,
+      "level": 3
+    },
+    {
+      "id": "section:cloud-and-service-provider-deployment",
+      "type": "section",
+      "name": "Cloud and Service Provider Deployment",
+      "file": "draft-howe-sipcore-mcp-extension.md",
+      "line": 1693,
+      "level": 3
+    },
+    {
+      "id": "section:privacy-considerations",
+      "type": "section",
+      "name": "Privacy Considerations",
       "file": "draft-howe-sipcore-mcp-extension.md",
       "line": 1709,
+      "level": 2
+    },
+    {
+      "id": "section:data-minimization",
+      "type": "section",
+      "name": "Data Minimization",
+      "file": "draft-howe-sipcore-mcp-extension.md",
+      "line": 1711,
       "level": 3
     },
     {
-      "id": "section:10-7-1-secure-development-practices",
+      "id": "section:regulatory-compliance",
       "type": "section",
-      "name": "10.7.1. Secure Development Practices",
+      "name": "Regulatory Compliance",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1711,
-      "level": 4
+      "line": 1727,
+      "level": 3
     },
     {
-      "id": "section:10-7-2-configuration-security",
+      "id": "section:security-monitoring-and-incident-response",
       "type": "section",
-      "name": "10.7.2. Configuration Security",
+      "name": "Security Monitoring and Incident Response",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1725,
-      "level": 4
+      "line": 1743,
+      "level": 2
+    },
+    {
+      "id": "section:monitoring-requirements",
+      "type": "section",
+      "name": "Monitoring Requirements",
+      "file": "draft-howe-sipcore-mcp-extension.md",
+      "line": 1745,
+      "level": 3
+    },
+    {
+      "id": "section:incident-response",
+      "type": "section",
+      "name": "Incident Response",
+      "file": "draft-howe-sipcore-mcp-extension.md",
+      "line": 1761,
+      "level": 3
+    },
+    {
+      "id": "section:implementation-security-guidelines",
+      "type": "section",
+      "name": "Implementation Security Guidelines",
+      "file": "draft-howe-sipcore-mcp-extension.md",
+      "line": 1777,
+      "level": 2
+    },
+    {
+      "id": "section:secure-development-practices",
+      "type": "section",
+      "name": "Secure Development Practices",
+      "file": "draft-howe-sipcore-mcp-extension.md",
+      "line": 1779,
+      "level": 3
+    },
+    {
+      "id": "section:configuration-security",
+      "type": "section",
+      "name": "Configuration Security",
+      "file": "draft-howe-sipcore-mcp-extension.md",
+      "line": 1795,
+      "level": 3
     },
     {
       "id": "section:iana-considerations",
       "type": "section",
       "name": "IANA Considerations",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1741,
+      "line": 1813,
       "level": 1
     },
     {
-      "id": "section:11-1-registration-of-option-tag",
+      "id": "section:registration-of-option-tag",
       "type": "section",
-      "name": "11.1. Registration of Option-Tag",
+      "name": "Registration of Option-Tag",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1745,
-      "level": 3
+      "line": 1817,
+      "level": 2
     },
     {
-      "id": "section:11-2-registration-of-header-fields",
+      "id": "section:registration-of-header-fields",
       "type": "section",
-      "name": "11.2. Registration of Header Fields",
+      "name": "Registration of Header Fields",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1754,
-      "level": 3
+      "line": 1826,
+      "level": 2
     },
     {
-      "id": "section:11-3-registration-of-feature-capability-indicators-rfc-6809",
+      "id": "section:registration-of-feature-capability-indicators-rfc-6809",
       "type": "section",
-      "name": "11.3. Registration of Feature-Capability Indicators (RFC 6809)",
+      "name": "Registration of Feature-Capability Indicators (RFC 6809)",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1768,
-      "level": 3
+      "line": 1840,
+      "level": 2
     },
     {
-      "id": "section:11-4-media-type-registration",
+      "id": "section:media-type-registration",
       "type": "section",
-      "name": "11.4. Media Type Registration",
+      "name": "Media Type Registration",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1784,
-      "level": 3
+      "line": 1856,
+      "level": 2
     },
     {
-      "id": "section:11-5-designated-expert-considerations",
+      "id": "section:designated-expert-considerations",
       "type": "section",
-      "name": "11.5. Designated Expert Considerations",
+      "name": "Designated Expert Considerations",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1805,
-      "level": 3
+      "line": 1877,
+      "level": 2
     },
     {
       "id": "section:references",
       "type": "section",
       "name": "References",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1814,
+      "line": 1886,
       "level": 1
     },
     {
-      "id": "section:12-1-normative",
+      "id": "section:normative",
       "type": "section",
-      "name": "12.1. Normative",
+      "name": "Normative",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1816,
-      "level": 3
+      "line": 1888,
+      "level": 2
     },
     {
-      "id": "section:12-2-informative",
+      "id": "section:informative",
       "type": "section",
-      "name": "12.2. Informative",
+      "name": "Informative",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1830,
-      "level": 3
+      "line": 1902,
+      "level": 2
     },
     {
       "id": "section:a-acknowledgments",
       "type": "section",
       "name": "A. Acknowledgments",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1839,
+      "line": 1906,
       "level": 2
     },
     {
@@ -900,7 +668,7 @@
       "type": "section",
       "name": "B. Change Log",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 1843,
+      "line": 1910,
       "level": 2
     },
     {
@@ -922,12 +690,6 @@
       "url": "https://www.rfc-editor.org/rfc/rfc3264"
     },
     {
-      "id": "reference:rfc3428",
-      "type": "reference",
-      "name": "RFC 3428",
-      "url": "https://www.rfc-editor.org/rfc/rfc3428"
-    },
-    {
       "id": "reference:rfc3550",
       "type": "reference",
       "name": "RFC 3550",
@@ -940,28 +702,16 @@
       "url": "https://www.rfc-editor.org/rfc/rfc3711"
     },
     {
-      "id": "reference:rfc3840",
-      "type": "reference",
-      "name": "RFC 3840",
-      "url": "https://www.rfc-editor.org/rfc/rfc3840"
-    },
-    {
-      "id": "reference:rfc3841",
-      "type": "reference",
-      "name": "RFC 3841",
-      "url": "https://www.rfc-editor.org/rfc/rfc3841"
-    },
-    {
       "id": "reference:rfc4145",
       "type": "reference",
       "name": "RFC 4145",
       "url": "https://www.rfc-editor.org/rfc/rfc4145"
     },
     {
-      "id": "reference:rfc4566",
+      "id": "reference:rfc8866",
       "type": "reference",
-      "name": "RFC 4566",
-      "url": "https://www.rfc-editor.org/rfc/rfc4566"
+      "name": "RFC 8866",
+      "url": "https://www.rfc-editor.org/rfc/rfc8866"
     },
     {
       "id": "reference:rfc4975",
@@ -988,18 +738,6 @@
       "url": "https://www.rfc-editor.org/rfc/rfc5764"
     },
     {
-      "id": "reference:rfc6665",
-      "type": "reference",
-      "name": "RFC 6665",
-      "url": "https://www.rfc-editor.org/rfc/rfc6665"
-    },
-    {
-      "id": "reference:rfc7118",
-      "type": "reference",
-      "name": "RFC 7118",
-      "url": "https://www.rfc-editor.org/rfc/rfc7118"
-    },
-    {
       "id": "reference:rfc7587",
       "type": "reference",
       "name": "RFC 7587",
@@ -1012,12 +750,6 @@
       "url": "https://www.rfc-editor.org/rfc/rfc8174"
     },
     {
-      "id": "reference:rfc8866",
-      "type": "reference",
-      "name": "RFC 8866",
-      "url": "https://www.rfc-editor.org/rfc/rfc8866"
-    },
-    {
       "id": "reference:rfc6809",
       "type": "reference",
       "name": "RFC 6809",
@@ -1028,6 +760,12 @@
       "type": "reference",
       "name": "RFC 5727",
       "url": "https://www.rfc-editor.org/rfc/rfc5727"
+    },
+    {
+      "id": "reference:rfc7118",
+      "type": "reference",
+      "name": "RFC 7118",
+      "url": "https://www.rfc-editor.org/rfc/rfc7118"
     },
     {
       "id": "reference:rfc5922",
@@ -1044,17 +782,17 @@
     {
       "id": "requirement:req-1",
       "type": "requirement",
-      "name": "SHOULD: The key words \u201cMUST\u201d, \u201cMUST NOT\u201d, \u201cREQUIRED\u201d, \u201cSHALL\u201d, \u201cSHOULD\u201d,",
+      "name": "SHALL NOT: The key words \"MUST\", \"MUST NOT\", \"REQUIRED\", \"SHALL\", \"SHALL NOT\",",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 448,
-      "keyword": "SHOULD"
+      "line": 503,
+      "keyword": "SHALL NOT"
     },
     {
       "id": "requirement:req-2",
       "type": "requirement",
-      "name": "SHOULD NOT: \u201cSHOULD NOT\u201d, \u201cRECOMMENDED\u201d, \u201cMAY\u201d, and \u201cOPTIONAL\u201d are to be",
+      "name": "SHOULD NOT: \"SHOULD\", \"SHOULD NOT\", \"RECOMMENDED\", \"NOT RECOMMENDED\", \"MAY\", and",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 449,
+      "line": 504,
       "keyword": "SHOULD NOT"
     },
     {
@@ -1062,7 +800,7 @@
       "type": "requirement",
       "name": "SHOULD: **Note:** As an Informational RFC, this document does not register the \"mcp\" opt",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 641,
+      "line": 698,
       "keyword": "SHOULD"
     },
     {
@@ -1070,7 +808,7 @@
       "type": "requirement",
       "name": "MUST: **Backward Compatibility:** Per RFC 3261 Section 7.4.1, SIP implementations that",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 666,
+      "line": 721,
       "keyword": "MUST"
     },
     {
@@ -1078,7 +816,7 @@
       "type": "requirement",
       "name": "MUST: Endpoints MUST accept (a). Support for (b) is OPTIONAL and only valid",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 729,
+      "line": 777,
       "keyword": "MUST"
     },
     {
@@ -1086,7 +824,7 @@
       "type": "requirement",
       "name": "SHOULD: UAs supporting MCP SHOULD advertise via Contact feature-caps (+mcp,",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 736,
+      "line": 784,
       "keyword": "SHOULD"
     },
     {
@@ -1094,7 +832,7 @@
       "type": "requirement",
       "name": "MUST: routing. Proxies MUST treat these parameters as opaque hints and MUST",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 738,
+      "line": 786,
       "keyword": "MUST"
     },
     {
@@ -1102,7 +840,7 @@
       "type": "requirement",
       "name": "SHOULD: MCP-capable agents SHOULD optimize registration refresh intervals based on their",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 743,
+      "line": 791,
       "keyword": "SHOULD"
     },
     {
@@ -1110,7 +848,7 @@
       "type": "requirement",
       "name": "SHOULD: * SHOULD use registration intervals of 60-300 seconds",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 746,
+      "line": 794,
       "keyword": "SHOULD"
     },
     {
@@ -1118,7 +856,7 @@
       "type": "requirement",
       "name": "MUST: * MUST be prepared for immediate de-registration upon shutdown",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 747,
+      "line": 795,
       "keyword": "MUST"
     },
     {
@@ -1126,7 +864,7 @@
       "type": "requirement",
       "name": "SHOULD: * SHOULD use registration intervals of 1800-3600 seconds (30-60 minutes)",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 751,
+      "line": 799,
       "keyword": "SHOULD"
     },
     {
@@ -1134,7 +872,7 @@
       "type": "requirement",
       "name": "MUST: * MUST implement graceful shutdown with explicit de-registration",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 752,
+      "line": 800,
       "keyword": "MUST"
     },
     {
@@ -1142,7 +880,7 @@
       "type": "requirement",
       "name": "SHOULD: * Individual agents SHOULD use 300-900 second intervals",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 756,
+      "line": 804,
       "keyword": "SHOULD"
     },
     {
@@ -1150,7 +888,7 @@
       "type": "requirement",
       "name": "MUST: * Pool members MUST coordinate registration timing to avoid thundering herd effe",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 757,
+      "line": 805,
       "keyword": "MUST"
     },
     {
@@ -1158,7 +896,7 @@
       "type": "requirement",
       "name": "SHOULD: * SHOULD use 600-1800 second intervals to balance discovery speed with inter-dom",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 761,
+      "line": 809,
       "keyword": "SHOULD"
     },
     {
@@ -1166,7 +904,7 @@
       "type": "requirement",
       "name": "MUST: * MUST account for additional network latency in cross-domain scenarios",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 762,
+      "line": 810,
       "keyword": "MUST"
     },
     {
@@ -1174,7 +912,7 @@
       "type": "requirement",
       "name": "MUST: SIP INFO. Bodies MUST be `application/mcp+json`.",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 790,
+      "line": 838,
       "keyword": "MUST"
     },
     {
@@ -1182,15 +920,15 @@
       "type": "requirement",
       "name": "SHOULD: MCP's native error members; SIP error codes SHOULD map where",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 801,
+      "line": 849,
       "keyword": "SHOULD"
     },
     {
       "id": "requirement:req-19",
       "type": "requirement",
-      "name": "SHOULD: - UAs SHOULD negotiate SRTP [RFC3711]. DTLS\u2011SRTP [RFC5764] is",
+      "name": "SHOULD: - UAs SHOULD negotiate SRTP [RFC3711]. DTLS-SRTP [RFC5764] is",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 884,
+      "line": 935,
       "keyword": "SHOULD"
     },
     {
@@ -1198,14 +936,8 @@
       "type": "requirement",
       "name": "MUST: - MSRP MUST be negotiated via an SDP `m=message` line per [RFC4975].",
       "file": "draft-howe-sipcore-mcp-extension.md",
-      "line": 891,
+      "line": 942,
       "keyword": "MUST"
-    },
-    {
-      "id": "document:draft-howe-sipcore-mcp-extension-kramdown",
-      "type": "document",
-      "name": "draft-howe-sipcore-mcp-extension-kramdown",
-      "file": "draft-howe-sipcore-mcp-extension-kramdown.md"
     }
   ],
   "edges": [
@@ -1241,87 +973,87 @@
     },
     {
       "from": "document:draft",
-      "to": "section:1-3-2-sip-unique-use-cases",
+      "to": "section:sip-unique-use-cases",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-3-3-performance-critical-use-cases",
+      "to": "section:performance-critical-use-cases",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-3-4-regulatory-and-compliance-use-cases",
+      "to": "section:regulatory-and-compliance-use-cases",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-3-5-migration-and-integration-use-cases",
+      "to": "section:migration-and-integration-use-cases",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-4-architectural-justification",
+      "to": "section:architectural-justification",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-4-1-why-sip-for-mcp-transport",
+      "to": "section:why-sip-for-mcp-transport",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-4-2-limitations-of-http-websocket-only-approaches",
+      "to": "section:limitations-of-http-websocket-only-approaches",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-4-3-sip-s-value-added-capabilities",
+      "to": "section:sip-s-value-added-capabilities",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-4-4-discovery-performance-analysis-sip-vs-dns",
+      "to": "section:discovery-performance-analysis-sip-vs-dns",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-4-5-quantitative-performance-analysis-sip-vs-current-mcp-transports",
+      "to": "section:quantitative-performance-analysis-sip-vs-current-mcp-transports",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-4-6-specific-use-cases-addressing-real-world-mcp-problems",
+      "to": "section:specific-use-cases-addressing-real-world-mcp-problems",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-4-7-alternative-transport-solutions-analysis",
+      "to": "section:alternative-transport-solutions-analysis",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-4-7-1-http-2-based-rpc-framework-analysis",
+      "to": "section:http-2-based-rpc-framework-analysis",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-4-7-2-quic-analysis",
+      "to": "section:quic-analysis",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-4-7-3-amqp-analysis",
+      "to": "section:amqp-analysis",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-4-7-4-comparative-analysis-summary",
+      "to": "section:comparative-analysis-summary",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:1-4-7-5-when-to-choose-sip-over-simpler-alternatives",
+      "to": "section:when-to-choose-sip-over-simpler-alternatives",
       "type": "contains"
     },
     {
@@ -1436,151 +1168,6 @@
     },
     {
       "from": "document:draft",
-      "to": "section:protocol-operation",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:registration-time-advertisement",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:registration-performance-characteristics",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:session-establishment-offer-answer",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:mid-dialog-exchange-message-info",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:error-handling",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:graceful-degradation-scenarios",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:multimodal-operation-audio-msrp",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:mcp-msrp-natural-compatibility-analysis",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:7-5-1-goals-and-scope",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:7-5-2-media-negotiation-with-sdp",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:7-5-3-binding-mcp-to-msrp",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:7-5-3a-multimedia-tool-calling-patterns",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:7-5-3b-performance-and-scalability-advantages",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:7-5-4-timing-and-synchronization",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:7-5-5-barge-in-and-turn-management",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:7-5-6-fallbacks-and-failure-handling",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:7-5-7-security-and-qos-notes",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:abnf",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:examples",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:register-with-contact-feature-caps",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:invite-with-mcp-offer",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:mid-dialog-mcp-message-native-json-rpc",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:sdp-offer-audio-srtp-msrp-msrps-for-mcp",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:msrp-send-carrying-application-mcp-json",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:multimedia-tool-call-with-binary-content-mcp-over-msrp",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:streaming-tool-response-large-document-generation",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:concurrent-tool-execution-with-progress-reporting",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
-      "to": "section:voice-vision-integration-with-temporal-correlation",
-      "type": "contains"
-    },
-    {
-      "from": "document:draft",
       "to": "section:security-considerations",
       "type": "contains"
     },
@@ -1596,117 +1183,117 @@
     },
     {
       "from": "document:draft",
-      "to": "section:10-1-2-threat-actors",
+      "to": "section:threat-actors",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-1-3-attack-vectors",
+      "to": "section:attack-vectors",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-2-security-requirements-and-mitigations",
+      "to": "section:security-requirements-and-mitigations",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-2-1-transport-security",
+      "to": "section:transport-security",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-2-2-authentication-and-authorization",
+      "to": "section:authentication-and-authorization",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-2-3-content-protection",
+      "to": "section:content-protection",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-3-feature-interaction-security-analysis",
+      "to": "section:feature-interaction-security-analysis",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-3-1-sip-mcp-boundary-security",
+      "to": "section:sip-mcp-boundary-security",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-3-2-multi-modal-security-interactions",
+      "to": "section:multi-modal-security-interactions",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-3-3-federation-security-interactions",
+      "to": "section:federation-security-interactions",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-4-deployment-specific-security-guidance",
+      "to": "section:deployment-specific-security-guidance",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-4-1-enterprise-deployment",
+      "to": "section:enterprise-deployment",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-4-2-federated-deployment",
+      "to": "section:federated-deployment",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-4-3-cloud-and-service-provider-deployment",
+      "to": "section:cloud-and-service-provider-deployment",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-5-privacy-considerations",
+      "to": "section:privacy-considerations",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-5-1-data-minimization",
+      "to": "section:data-minimization",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-5-2-regulatory-compliance",
+      "to": "section:regulatory-compliance",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-6-security-monitoring-and-incident-response",
+      "to": "section:security-monitoring-and-incident-response",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-6-1-monitoring-requirements",
+      "to": "section:monitoring-requirements",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-6-2-incident-response",
+      "to": "section:incident-response",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-7-implementation-security-guidelines",
+      "to": "section:implementation-security-guidelines",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-7-1-secure-development-practices",
+      "to": "section:secure-development-practices",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:10-7-2-configuration-security",
+      "to": "section:configuration-security",
       "type": "contains"
     },
     {
@@ -1716,27 +1303,27 @@
     },
     {
       "from": "document:draft",
-      "to": "section:11-1-registration-of-option-tag",
+      "to": "section:registration-of-option-tag",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:11-2-registration-of-header-fields",
+      "to": "section:registration-of-header-fields",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:11-3-registration-of-feature-capability-indicators-rfc-6809",
+      "to": "section:registration-of-feature-capability-indicators-rfc-6809",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:11-4-media-type-registration",
+      "to": "section:media-type-registration",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:11-5-designated-expert-considerations",
+      "to": "section:designated-expert-considerations",
       "type": "contains"
     },
     {
@@ -1746,12 +1333,12 @@
     },
     {
       "from": "document:draft",
-      "to": "section:12-1-normative",
+      "to": "section:normative",
       "type": "contains"
     },
     {
       "from": "document:draft",
-      "to": "section:12-2-informative",
+      "to": "section:informative",
       "type": "contains"
     },
     {
